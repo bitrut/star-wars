@@ -1,20 +1,17 @@
 var StarWars = {};
 
 StarWars.startAnimation = function() {
-  var shift_distance = 2 * StarWars.trueHeight - $("#textContainer").height(); // how far to move
-  var time_normalized = parseInt(shift_distance / 100, 10) * 2000; // speed
-  $("#textContainer").contents().wrapAll('<div id="content">').parent() // wrap in div
-    .animate({
-      top: -shift_distance
-    }, time_normalized, 'linear'); // and move the div within its "viewport"
+  var content = $("#content")
+  var h = $(content).height();
+  $(content).css('height', 200).css('top', window.innerHeight);
+  $(content).animate({top: -2*h, height: 2*h}, h*20, 'linear', function(){
+    $(this).fadeOut();
+  });
 }
 
-//StarWars.
-
-StarWars.trueHeight = 0;
 
 $(document).ready(function() {
-  StarWars.trueHeight = ( function(){
+  /*StarWars.trueHeight = ( function(){
     var $tempobj = $('#textContainer') // starting with truncated text div container
       .clone().contents() // duplicate the text
       .wrapAll('<div id="content"/>') // wrap it in a container
@@ -23,14 +20,14 @@ $(document).ready(function() {
     var result = $tempobj.height(); // measure it
     $tempobj.remove(); // clean up
     return result;
-  })();
+  })();*/
   
   var audio = document.getElementById("song");
   audio.addEventListener("playing", function() {
     StarWars.startAnimation();
   });
-  audio.play();
-  
+  //audio.play();
+  StarWars.startAnimation();
 });
 
 
