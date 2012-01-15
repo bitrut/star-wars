@@ -14,7 +14,6 @@ StarWars.startAnimation = function() {
     StarWars.startAnimation();
   });
   audio.play();
-  StarWars.startAnimation();
 });
 
 
