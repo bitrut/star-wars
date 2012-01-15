@@ -21,21 +21,11 @@ html, body {
 
 #container {
   min-height:100%;
-  color: yellow;
-  /*background-color: gray;*/
+  color: #DB0;
   font-weight: bold;
   text-align: center;  
   -webkit-transform: rotateX(75deg);
   -webkit-transform-origin-y: 100%;
-
-/*
-  -webkit-transform-origin: right center;
-  -webkit-transform: perspective(600) rotateX(45deg);
-
-  -moz-perspective: 600;
-  -moz-perspective-origin: center top;
-  -moz-transform: rotateX(45deg);
-*/
 }
 
 #content {
@@ -46,9 +36,4 @@ html, body {
   width: 100%;
   top: 1200px;
   position: absolute;
-}
-
-#theend, #theend a {
-  font-size: 20px;
-  color: yellow;
 }
